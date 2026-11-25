@@ -1,30 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Join AI Agentic Applications</title>
-  <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 600px; margin: 3rem auto; padding: 0 1rem; color: #24292f; }
-    .card { border: 1px solid #d0d7de; border-radius: 8px; padding: 2rem; background: #f6f8fa; }
-    label { display: block; font-weight: 600; margin-top: 1.2rem; }
-    select, input, textarea { width: 100%; padding: 0.6rem; margin-top: 0.4rem; border: 1px solid #d0d7de; border-radius: 6px; box-sizing: border-box; background: #fff; }
-    button { margin-top: 1.5rem; width: 100%; padding: 0.75rem; background: #2da44e; color: white; border: none; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; }
-    button:hover { background: #2c974b; }
-    button:disabled { background: #94d3a2; cursor: not-allowed; }
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b0e12">
+<meta name="description" content="AI Agentic Applications — an open-source community building practical AI tools. Explore octoTriage and olaVox, contribute code, and help shape what comes next.">
+<title>Join AI Agentic Applications</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Crect width='80' height='80' rx='18' fill='%230b0e12'/%3E%3Ctext x='9' y='58' font-size='52' font-family='Arial' font-weight='900' fill='%23ffce32'%3EA%3C/text%3E%3C/svg%3E">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{--bg:#0b0e12;--panel:#11161d;--text:#f2f3f5;--muted:#929ba9;--line:rgba(255,255,255,.11);--yellow:#ffe34b;--red:#ff3447;--orange:#ff902c;--display:'Space Grotesk',sans-serif;--body:'DM Sans',sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);-webkit-font-smoothing:antialiased}::selection{background:var(--yellow);color:#111}a{color:inherit;text-decoration:none}button{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible{outline:2px solid var(--yellow);outline-offset:6px} .wrap{width:min(1200px,calc(100% - 96px));margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(11,14,18,.86);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}nav{height:88px;display:flex;align-items:center;justify-content:space-between;gap:30px}.brand{display:flex;align-items:center;gap:14px}.brandmark{font-family:Arial,sans-serif;font-weight:900;font-style:italic;letter-spacing:-9px;padding-right:9px;font-size:38px;line-height:1;background:linear-gradient(100deg,var(--red) 15%,var(--orange) 52%,var(--yellow) 85%);color:transparent;background-clip:text}.brandname{font-family:var(--display);font-weight:600;font-size:12px;line-height:1.35;letter-spacing:.02em}.navlinks{display:flex;align-items:center;gap:32px;font-size:13px;color:#aab2bf}.navlinks>a:hover{color:white}.nav-github{border:1px solid var(--line);padding:11px 16px;border-radius:7px;color:var(--text)!important;display:flex;align-items:center;gap:9px}.gh{width:18px;height:18px;fill:currentColor}.menu{display:none;color:white;background:none;border:1px solid var(--line);padding:8px 12px;border-radius:5px}
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}.hero-grid{display:grid;grid-template-columns:1.15fr 1fr;align-items:center;min-height:690px;gap:10px;position:relative;z-index:1}.hero-copy{padding:75px 0 95px}.eyebrow{display:flex;align-items:center;gap:9px;text-transform:uppercase;letter-spacing:.16em;font:500 10px var(--display);color:var(--muted)}.dot{width:6px;height:6px;border-radius:50%;background:var(--yellow);box-shadow:0 0 13px #ffe34b55}.eyebrow .dot{animation:pulse 3s infinite}h1{font:500 clamp(50px,5.8vw,79px)/1.04 var(--display);letter-spacing:-.065em;margin:29px 0 25px}h1, h2 span{background:linear-gradient(100deg,var(--red),var(--orange) 55%,var(--yellow));background-clip:text;color:transparent}.hero-copy>p{font-size:16px;color:var(--muted);line-height:1.8;max-width:420px;margin-bottom:31px}.actions{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:20px;padding:15px 21px;font-size:12px;font-weight:700;border-radius:6px;border:1px solid var(--line);transition:transform .2s,background .2s,border-color .2s}.btn:hover{transform:translateY(-3px);border-color:#737b88}.btn.primary{background:var(--yellow);color:#121416;border-color:var(--yellow)}.btn.primary:hover{background:#ffeb7b}.hero-note{margin-top:25px;color:#687383;font-size:10px;font-family:var(--display);letter-spacing:.02em}.hero-note span{color:var(--yellow);margin-right:7px}
+.art{height:500px;position:relative;display:flex;align-items:center;justify-content:center;isolation:isolate}.art:before{content:'';position:absolute;inset:-60px -140px;background:radial-gradient(ellipse,#ff852510,transparent 64%);z-index:-1}.art-grid{position:absolute;inset:0;background-image:linear-gradient(#ffffff05 1px,transparent 1px),linear-gradient(90deg,#ffffff05 1px,transparent 1px);background-size:34px 34px;mask-image:radial-gradient(ellipse,black,transparent 69%)}.orbit{position:absolute;width:350px;height:350px;border:1px solid #ffffff0d;border-radius:50%;transform:rotate(-24deg)}.orbit.two{width:440px;height:440px;border-style:dashed;animation:spin 100s linear infinite}.orbit:after{content:'';position:absolute;width:7px;height:7px;border-radius:50%;background:var(--orange);top:49px;left:49px;box-shadow:0 0 25px #ff902c}.bigmark{font:900 italic clamp(110px,15vw,205px) Arial,sans-serif;letter-spacing:-.23em;padding-right:.23em;transform:rotate(-6deg);background:linear-gradient(105deg,var(--red) 15%,var(--orange) 48%,var(--yellow) 88%);background-clip:text;color:transparent;filter:drop-shadow(0 15px 40px #ff6a1515);animation:float 7s ease-in-out infinite}.art-label{position:absolute;background:#11161de8;border:1px solid #ffffff14;border-radius:7px;padding:11px 14px;display:flex;gap:9px;align-items:center;color:#bcc4cf;font:10px var(--display);box-shadow:0 12px 40px #0003}.art-label svg{width:14px;height:14px;color:var(--yellow)}.label-one{top:90px;left:10px;animation:float 7s ease-in-out infinite reverse}.label-two{bottom:93px;right:-10px;animation:float 8s ease-in-out infinite}.label-three{bottom:51px;left:45px;font-size:9px;background:transparent;box-shadow:none;border:none;color:#667180}.connectors{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:#3b424d;stroke-width:1}.flow{stroke:var(--orange);stroke-dasharray:4 120;animation:flow 9s linear infinite}.hero-bottom{border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:23px 0;color:#77818e;font:10px var(--display);letter-spacing:.1em;text-transform:uppercase}.hero-bottom .right{display:flex;gap:30px}.hero-bottom b{color:#c9ced7;font-weight:400}.section{padding:100px 0}.section-top{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:39px}.kicker{font:11px var(--display);text-transform:uppercase;letter-spacing:.16em;color:var(--orange);margin:0 0 19px}h2{font:500 clamp(29px,3.5vw,43px)/1.15 var(--display);letter-spacing:-.05em;margin:0}.section-top>p{max-width:300px;color:var(--muted);font-size:13px;line-height:1.8;margin:0}.projects{display:grid;grid-template-columns:1fr 1fr;gap:24px}.project{border:1px solid var(--line);border-radius:12px;background:linear-gradient(155deg,#141922,#0e1319);overflow:hidden;transition:transform .3s,border-color .3s}.project:hover{transform:translateY(-5px);border-color:#ffffff30}.project-visual{height:250px;position:relative;overflow:hidden;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:center;background-image:radial-gradient(#ffffff12 .8px,transparent .8px);background-size:16px 16px}.project-visual:after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(0deg,#10151c,transparent 45%)}.visual-label{position:absolute;top:19px;left:21px;color:#6f7a89;font:9px var(--display);letter-spacing:.14em}.triage-ui{width:70%;background:#141b24;border:1px solid #ffffff20;border-radius:8px;padding:16px;transform:perspective(700px) rotateY(-10deg) rotateX(7deg);box-shadow:18px 25px 70px #0007;animation:float 9s ease-in-out infinite}.ui-bar{display:flex;align-items:center;gap:5px;padding-bottom:14px;border-bottom:1px solid var(--line);font:9px var(--display);color:#8592a4}.tiny-dot{height:4px;width:4px;border-radius:50%;background:#596370}.ui-bar span:last-child{margin-left:10px}.issue{display:flex;align-items:center;justify-content:space-between;padding:12px 0 5px;font-size:9px;color:#b6c1ce;gap:8px}.issue i{height:5px;width:5px;border-radius:50%;background:#79b9ec;margin-right:5px;display:inline-block}.tag{color:#ffca60;background:#ffca6010;padding:4px 6px;border:1px solid #ffca6020;border-radius:4px;font:8px var(--display);white-space:nowrap}.issue:nth-child(3) .tag{color:#a89dff;background:#a89dff10;border-color:#a89dff20}.issue:nth-child(4) .tag{color:#89ceb0;background:#89ceb010;border-color:#89ceb020}.voice-visual{background-color:#14151a}.wave{display:flex;gap:5px;align-items:center;height:100px;mask-image:linear-gradient(90deg,transparent,black 15%,black 85%,transparent);width:82%;justify-content:center}.wave i{width:4px;border-radius:6px;background:linear-gradient(var(--yellow),var(--orange),var(--red));height:var(--height);opacity:.8;animation:wave 1.6s ease-in-out infinite;animation-delay:var(--delay)}.voice-chip{position:absolute;bottom:40px;z-index:1;border:1px solid #ffffff13;background:#151920d9;padding:8px 13px;border-radius:30px;font:9px var(--display);color:#929dab;display:flex;align-items:center;gap:8px}.voice-chip .dot{width:4px;height:4px}.project-body{padding:28px}.project-heading{display:flex;align-items:center;justify-content:space-between;gap:15px}.project-heading h3{font:500 26px var(--display);letter-spacing:-.04em;margin:0}.pill{font:9px var(--display);color:#8d99a9;border:1px solid var(--line);border-radius:20px;padding:5px 8px}.project-body p{font-size:13px;line-height:1.8;color:var(--muted);min-height:47px;margin:16px 0 26px;max-width:365px}.project-foot{display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:19px}.language{font-size:10px;color:#8e99a9;display:flex;align-items:center;gap:7px}.language:before{content:'';width:6px;height:6px;border-radius:50%;background:#519bde}.language.js:before{background:#f1df4c}.repo-link{font-size:11px;font-weight:600;display:flex;gap:13px;align-items:center}.repo-link:hover{color:var(--yellow)}
+.about{padding:78px 0 88px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0e1218}.about-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:90px}.about-copy p{font-size:14px;color:var(--muted);line-height:1.9;max-width:370px;margin-top:23px}.principles{display:grid;gap:25px;padding-top:6px}.principle{display:grid;grid-template-columns:32px 1fr;gap:13px}.num{font:10px var(--display);color:var(--orange);padding-top:4px}.principle h3{font:500 16px var(--display);margin:0 0 8px}.principle p{font-size:12px;line-height:1.8;color:var(--muted);margin:0;max-width:360px}.community{padding:100px 0}.join-panel{position:relative;overflow:hidden;border:1px solid #ffffff16;border-radius:12px;background:radial-gradient(ellipse at 90% 100%,#ff962b10,transparent 60%),#11151b;padding:65px;text-align:center}.join-panel:after{content:'AAA';position:absolute;font:900 italic 230px Arial;letter-spacing:-45px;color:#ffffff02;right:10px;bottom:-70px;pointer-events:none}.join-panel .kicker{color:var(--yellow)}.join-panel h2{font-size:clamp(32px,4vw,49px)}.join-panel>p:not(.kicker){color:var(--muted);font-size:14px;line-height:1.8;max-width:460px;margin:20px auto 27px}.join-panel .actions{justify-content:center;position:relative;z-index:1}.contribute-note{font:10px var(--display);color:#727f91;margin-top:23px}footer{border-top:1px solid var(--line);padding:27px 0 35px}.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:25px}.footer-brand{display:flex;align-items:center;gap:17px}.footer-brand .brandmark{font-size:27px;letter-spacing:-7px;padding-right:7px}.footer-brand span{font-size:10px;color:#6e7988}.footer-links{display:flex;gap:23px;font-size:10px;color:#929dab}.footer-links a:hover{color:white}.reveal{opacity:1;transform:none}.js-motion .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}.js-motion .reveal.visible{opacity:1;transform:none}
+@keyframes float{0%,100%{translate:0 0}50%{translate:0 -12px}}@keyframes spin{to{transform:rotate(336deg)}}@keyframes flow{to{stroke-dashoffset:-496}}@keyframes pulse{50%{box-shadow:0 0 0 5px #ffe34b0b}}@keyframes wave{0%,100%{transform:scaleY(.45)}50%{transform:scaleY(1)}}
+@media(min-width:1450px){.hero-grid{min-height:760px}}@media(max-width:1000px){.wrap{width:calc(100% - 56px)}.hero-grid{grid-template-columns:1.1fr .9fr;min-height:630px}.art{transform:scale(.8);margin-right:-40px}.label-two{right:-40px}.hero-copy{padding:70px 0}h1{font-size:60px}.navlinks{gap:20px}.about-layout{gap:45px}}
+@media(max-width:720px){.wrap{width:calc(100% - 40px)}nav{height:74px}.brandname{font-size:10px}.brandmark{font-size:33px}.menu{display:block}.navlinks{display:none;position:absolute;top:74px;left:0;right:0;padding:24px;background:#10151d;border-bottom:1px solid var(--line);align-items:stretch;flex-direction:column;gap:22px}.navlinks.open{display:flex}.nav-github{justify-content:center}.hero-grid{display:flex;flex-direction:column;gap:0;min-height:0;align-items:stretch}.hero-copy{padding:58px 0 0;z-index:2}h1{font-size:clamp(49px,10vw,68px);max-width:550px;margin-top:24px}.hero-copy>p{font-size:14px;max-width:350px}.art{height:330px;transform:scale(.78);margin:-18px -15px -6px}.bigmark{font-size:185px}.label-one{top:15px;left:10%}.label-two{bottom:30px;right:5%}.label-three{bottom:-10px;left:15%}.hero-bottom{font-size:8px;gap:15px;padding:20px 0}.hero-bottom .right{gap:14px}.hero-bottom .right span:last-child{display:none}.section{padding:65px 0}.section-top{display:block;margin-bottom:28px}.section-top>p{margin-top:20px;max-width:330px}.projects{grid-template-columns:1fr;gap:22px}.project-visual{height:235px}.project-body{padding:25px}.about{padding:60px 0}.about-layout{grid-template-columns:1fr;gap:30px}.about-copy p{max-width:100%}.principles{gap:25px}.community{padding:60px 0}.join-panel{padding:43px 22px}.join-panel .btn{padding:14px 16px;font-size:11px}.footer-inner{align-items:flex-start;flex-direction:column;gap:22px}.footer-links{width:100%;justify-content:space-between}.footer-brand span{font-size:9px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}.js-motion .reveal{opacity:1;transform:none}}
+.repo_hl{ padding-left: 2rem; background-color: #ff912cb0; padding-top: 2rem; border-radius: .7rem;}.repo_hl_bg1{background-color: #ff4f3f;}.repo_hl_bg2{background-color: #ff912cb0;}
+.card { border: 1px solid var(--line); border-radius: 8px; padding: 2rem; background: linear-gradient(155deg, #141922, #0e1319); }
+label { display: block; font-weight: 600; margin-top: 1.2rem; }
+select, input, textarea { width: 100%; padding: 0.6rem; margin-top: 0.4rem; border: 1px solid #363637; border-radius: 6px; box-sizing: border-box; background: #e3b264; }
+button { margin-top: 1.5rem; width: 100%; padding: 0.75rem; background: #723500; color: white; border: none; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; }
+button:hover { background: #fa4f3f; }
+button:disabled { background: #a9a9a9; cursor: not-allowed; }.optionsels{font-size: 13px; line-height: 1.8; color: var(--muted);}
+</style>
 </head>
 <body>
-  <div class="card">
-    <h2>Join AI Agentic Applications (AAA)</h2>
+<header><nav class="wrap" aria-label="Main navigation"><a class="brand" href="#" aria-label="AI Agentic Applications home"><span class="brandmark" aria-hidden="true">AAA</span><span class="brandname">AI AGENTIC<br>APPLICATIONS</span></a><button class="menu" aria-expanded="false" aria-controls="navlinks">Menu</button><div class="navlinks" id="navlinks"><a href="#projects">Projects</a><a href="#about">Our approach</a><a href="#community">Community</a><a class="nav-github" href="https://github.com/AI-Agentic-Applications" target="_blank" rel="noopener noreferrer"><svg class="gh" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 .8a11.3 11.3 0 0 0-3.57 22c.56.1.77-.24.77-.54v-2.1c-3.14.68-3.8-1.34-3.8-1.34-.51-1.3-1.25-1.65-1.25-1.65-1.03-.7.08-.69.08-.69 1.14.08 1.74 1.17 1.74 1.17 1.01 1.73 2.65 1.23 3.3.94.1-.73.4-1.23.72-1.51-2.51-.29-5.15-1.26-5.15-5.6 0-1.23.44-2.24 1.16-3.03-.12-.29-.5-1.44.11-3 0 0 .95-.31 3.11 1.15a10.9 10.9 0 0 1 5.66 0c2.16-1.46 3.1-1.15 3.1-1.15.62 1.56.24 2.71.12 3 .72.79 1.16 1.8 1.16 3.03 0 4.35-2.65 5.31-5.17 5.59.41.35.77 1.04.77 2.1v3.09c0 .3.21.65.78.54A11.3 11.3 0 0 0 12 .8Z"/></svg>GitHub <span aria-hidden="true">↗</span></a></div></nav></header>
+<main>
+
+
+
+
+<section class="section wrap" id="projects" aria-labelledby="projects-title">
+  <div class="section-top reveal">
+    <div>
+      <p class="kicker">Made better together</p>
+      <h2 id="projects-title">Welcome to <span>AAA</span> developers hub.</h2>
+    </div>
     <p>Select your role and target repository to generate your onboarding request.</p>
+  </div>
+  <div class="projects">
+
+
+
+
+
+
+
+
+    <div class="repo_hl repo_hl_bg1">
+      <article class="project reveal">
+
+        <div class="project-body">
+          <div class="project-heading">
+            <h3>Contributor Role</h3><span class="pill">Write code</span>
+          </div>
+         
+          <p>
+• Standard role for active developers. Includes Triage permissions plus the ability to push code to non-protected branches and merge pull requests.
+• Contributor: Doesn't need org membership yet. Trigger onboarding automatically on their very first pull_request or issues opened event across any public repo.
+
+</p>
+<p>
+• Collaborator / Maintainer: Uses an Issue Form template with dropdowns for Role (Collaborator vs. Maintainer), Target Repo/Team, and Justification.
+
+</p>
+          <!-- <div class="project-foot"><span class="language">TypeScript</span><a class="repo-link"
+              href="https://github.com/AI-Agentic-Applications/octoTriage" target="_blank" rel="noopener noreferrer"
+              aria-label="Explore octoTriage on GitHub">Explore repository <span aria-hidden="true">↗</span></a></div>
+        </div> -->
+      </article>
+            <article class="project reveal">
+
+        <div class="project-body">
+          <div class="project-heading">
+            <h3>Collaborator Role</h3><span class="pill">Discuss code</span>
+          </div>
+         
+<p>
+• Member. Best for non-code contributors who want to view or discuss a project. The default role for users in an organization. Grants standard access to organization features.
+
+</p>
+          <!-- <div class="project-foot"><span class="language">TypeScript</span><a class="repo-link"
+              href="https://github.com/AI-Agentic-Applications/octoTriage" target="_blank" rel="noopener noreferrer"
+              aria-label="Explore octoTriage on GitHub">Explore repository <span aria-hidden="true">↗</span></a></div>
+        </div> -->
+      </article>
+    </div>
+    <div class="repo_hl repo_hl_bg2 project-body optionsels">
+      <article class="project reveal">
+       
+          <div class="card">
+    <h2>Join</h2>
+
 
     <form id="onboardingForm">
       <label for="role">Desired Role</label>
       <select id="role" required>
         <option value="Contributor">Contributor (First PR / Issue help)</option>
         <option value="Collaborator">Collaborator (Repo triage / write access)</option>
-        <option value="Maintainer">Maintainer (Org membership & team lead)</option>
+        <option value="Maintainer" disabled>Maintainer (Org membership & team lead)</option>
       </select>
 
       <label for="repo">Target Repository</label>
@@ -44,6 +122,28 @@
     </form>
   </div>
 
+      </article>
+    </div>
+  </div>
+</section>
+
+
+</main><footer><div class="wrap footer-inner"><div class="footer-brand"><a href="#" class="brandmark" aria-label="Back to top">AAA</a><span>AI Agentic Applications · Built in the open.</span></div><div class="footer-links"><a href="https://github.com/AI-Agentic-Applications" target="_blank" rel="noopener noreferrer">GitHub ↗</a><a href="#projects">Our projects</a><a href="#" aria-label="Back to top">Back to top ↑</a></div></div></footer>
+<script>
+(()=>{'use strict';
+const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+const menu=document.querySelector('.menu'),links=document.querySelector('.navlinks');
+function closeMenu(){links.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='Menu'}
+menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')!=='true';menu.setAttribute('aria-expanded',String(open));links.classList.toggle('open',open);menu.textContent=open?'Close':'Menu'});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&links.classList.contains('open')){closeMenu();menu.focus()}});
+document.addEventListener('click',e=>{if(!e.target.closest('nav'))closeMenu()});
+const wave=document.getElementById('wave');
+for(let i=0;i<49;i++){const bar=document.createElement('i');const envelope=Math.sin(Math.PI*i/48);bar.style.setProperty('--height',`${10+envelope*(25+50*Math.abs(Math.sin(i*1.7)))}px`);bar.style.setProperty('--delay',`${-i*.09}s`);wave.appendChild(bar)}
+if('IntersectionObserver' in window&&!reduce.matches){document.documentElement.classList.add('js-motion');const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));}
+})();
+</script>
+
    <script>
     var org = 'AI-Agentic-Applications';
     var repoSelect = document.getElementById('repo');
@@ -52,7 +152,8 @@
     async function loadRepos() {
       try {
 
-        var apiUrl = 'https://github.com/' + org + '/repos?type=public&per_page=100&sort=updated';
+
+        var apiUrl = 'https://github.com/orgs/' + org + '/repositories?type=public&per_page=100&sort=updated';
 
         var res = await fetch(apiUrl);
         if (!res.ok) throw new Error('GitHub API error');
@@ -77,7 +178,9 @@
       } catch (err) {
         repoSelect.innerHTML =
           '<option value="" disabled selected>-- Select a repository --</option>' +
-          '<option value="general">general</option>';
+          '<option value="general">general</option>'+
+          '<option value="general">octoTriage</option>'+
+          '<option value="general">ollaVox</option>';
       } finally {
         repoSelect.disabled = false;
         submitBtn.disabled = false;
@@ -106,5 +209,4 @@
       window.location.href = targetUrl;
     });
   </script>
-</body>
-</html>
+</body></html>
