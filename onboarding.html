@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join AI Agentic Applications</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 600px; margin: 3rem auto; padding: 0 1rem; color: #24292f; }
+    .card { border: 1px solid #d0d7de; border-radius: 8px; padding: 2rem; background: #f6f8fa; }
+    label { display: block; font-weight: 600; margin-top: 1.2rem; }
+    select, input, textarea { width: 100%; padding: 0.6rem; margin-top: 0.4rem; border: 1px solid #d0d7de; border-radius: 6px; box-sizing: border-box; background: #fff; }
+    button { margin-top: 1.5rem; width: 100%; padding: 0.75rem; background: #2da44e; color: white; border: none; border-radius: 6px; font-size: 1rem; font-weight: 600; cursor: pointer; }
+    button:hover { background: #2c974b; }
+    button:disabled { background: #94d3a2; cursor: not-allowed; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Join AI Agentic Applications (AAA)</h2>
+    <p>Select your role and target repository to generate your onboarding request.</p>
+
+    <form id="onboardingForm">
+      <label for="role">Desired Role</label>
+      <select id="role" required>
+        <option value="Contributor">Contributor (First PR / Issue help)</option>
+        <option value="Collaborator">Collaborator (Repo triage / write access)</option>
+        <option value="Maintainer">Maintainer (Org membership & team lead)</option>
+      </select>
+
+      <label for="repo">Target Repository</label>
+      <select id="repo" required disabled>
+        <option value="">Loading public repositories...</option>
+      </select>
+
+      <label for="notes">Tell us a bit about what you'd like to work on</label>
+      <textarea id="notes" rows="3" placeholder="Briefly describe your goals or past PRs..." required></textarea>
+
+      <label>
+        <input type="checkbox" id="coc" required style="width: auto;" />
+        I agree to abide by the Community Code of Conduct.
+      </label>
+
+      <button type="submit" id="submitBtn" disabled>Continue to GitHub to Submit →</button>
+    </form>
+  </div>
+
+  <script>
+    const org = 'AI-Agentic-Applications';
+    const repoSelect = document.getElementById('repo');
+    const submitBtn = document.getElementById('submitBtn');
+
+    // Automatically load public repositories from GitHub API
+    async function loadRepos() {
+      try {
+        const res = await fetch(`https://github.com{org}/repos?type=public&per_page=100&sort=updated`);
+        if (!res.ok) throw new Error('GitHub API error');
+        const repos = await res.json();
+
+        // Filter out meta repositories (.github and .github.io)
+        const filtered = repos.filter(r => r.name !== '.github' && !r.name.endsWith('.github.io'));
+
+        repoSelect.innerHTML = '<option value="" disabled selected>-- Select a repository --</option>';
+
+        if (filtered.length === 0) {
+          repoSelect.innerHTML += '<option value="general">general (No public project repos yet)</option>';
+        } else {
+          filtered.forEach(r => {
+            const option = document.createElement('option');
+            option.value = r.name;
+            option.textContent = r.description ? `${r.name} — ${r.description}` : r.name;
+            repoSelect.appendChild(option);
+          });
+        }
+      } catch (err) {
+        // Fallback option if API fails or rate-limits
+        repoSelect.innerHTML = `
+          <option value="" disabled selected>-- Select a repository --</option>
+          <option value="general">general</option>
+        `;
+      } finally {
+        repoSelect.disabled = false;
+        submitBtn.disabled = false;
+      }
+    }
+
+    loadRepos();
+
+    document.getElementById('onboardingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const role = document.getElementById('role').value;
+      const repo = repoSelect.value;
+      const notes = document.getElementById('notes').value;
+
+      const params = new URLSearchParams({
+        template: 'onboarding.yml',
+        title: `[Onboarding] ${role} request for ${repo}`,
+        role: role,
+        repo: repo,
+        notes: notes,
+        coc: 'I agree to the Code of Conduct'
+      });
+
+      window.location.href = `https://github.com{org}/.github/issues/new?${params.toString()}`;
+    });
+  </script>
+</body>
+</html>
