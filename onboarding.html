@@ -51,7 +51,9 @@
 
     async function loadRepos() {
       try {
+        
         var apiUrl = 'https://github.com' + org + '/repos?type=public&per_page=100&sort=updated';
+
         var res = await fetch(apiUrl);
         if (!res.ok) throw new Error('GitHub API error');
         var repos = await res.json();
@@ -100,6 +102,7 @@
       });
 
       var targetUrl = 'https://github.com' + org + '/.github/issues/new?' + params.toString();
+
       window.location.href = targetUrl;
     });
   </script>
