@@ -154,38 +154,5 @@ if('IntersectionObserver' in window&&!reduce.matches){document.documentElement.c
 })();
 
 
-const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%&*";
-
-function scrambleText(element) {
-  let iteration = 0;
-  const originalText = element.dataset.value;
-  clearInterval(element.interval);
-
-  element.interval = setInterval(() => {
-    element.innerText = originalText
-      .split("")
-      .map((letter, index) => {
-        if (letter === " ") return " ";
-        if (index < iteration) {
-          return originalText[index];
-        }
-        return letters[Math.floor(Math.random() * letters.length)];
-      })
-      .join("");
-
-    if (iteration >= originalText.length) {
-      clearInterval(element.interval);
-    }
-
-    iteration += 1 / 3; // Controls speed (smaller = slower)
-  }, 30);
-}
-
-// Run on page load AND on hover
-const target = document.querySelector(".scramble-text");
-scrambleText(target);
-target.addEventListener("mouseover", () => scrambleText(target));
-
-
 </script>
 </body></html>
